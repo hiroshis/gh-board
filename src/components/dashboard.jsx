@@ -290,40 +290,6 @@ const CustomRepoModal = React.createClass({
   }
 });
 
-const ExamplesPanel = React.createClass({
-  getInitialState() {
-    return {showModal: false};
-  },
-  onClickMore() {
-    this.setState({showModal: true});
-  },
-  render() {
-    const {showModal} = this.state;
-    const close = () => this.setState({ showModal: false});
-
-    const examplesHeader = (
-      <span className='examples-header'>
-        <BeakerIcon className='org-icon'/>
-        {' Example Boards of GitHub Repositories'}
-      </span>
-    );
-
-    return (
-      <BS.Panel key='example-repos' header={examplesHeader}>
-        <BS.ListGroup>
-          {_.map(SAMPLE_REPOS, (props) => <RepoItem key={JSON.stringify(props)} {...props}/>)}
-          <BS.ListGroupItem className='repo-item' onClick={this.onClickMore}>
-            <RepoIcon className='repo-icon'/>
-            Choose your own...
-          </BS.ListGroupItem>
-          <CustomRepoModal show={showModal} container={this} onHide={close}/>
-        </BS.ListGroup>
-      </BS.Panel>
-    );
-  }
-});
-
-
 let allMyReposHack = null;
 
 const DashboardShell = React.createClass({
@@ -367,9 +333,6 @@ const DashboardShell = React.createClass({
     return (
       <BS.Grid fluid className='dashboard' data-org-count={myRepos.length}>
         <BS.Row>
-          <BS.Col md={6}>
-            <ExamplesPanel/>
-          </BS.Col>
           {myRepos}
         </BS.Row>
       </BS.Grid>
