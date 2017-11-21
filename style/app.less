@@ -286,18 +286,6 @@ i.icon-spin {
   }
 }
 
-
-
-.game-modal {
-  .modal-content {
-    width: 720px;
-    .game-wrapper {
-      width: 690px;
-      height: 534px;
-    }
-  }
-}
-
 // react-dnd now requires DragSource and DropTarget elements to be simple Components
 // so I had to insert a wrapper div around ListGroupItem
 // .list-group > .-drag-source + .-drag-source { border-top: 1px solid #eee; }
@@ -489,4 +477,17 @@ i.icon-spin {
 
   &::before { content: '('; }
   &::after { content: ')'; }
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background: transparent;
+  border-left: none;
+}
+::-webkit-scrollbar-thumb{
+  background: #aaa;
+  border-radius: 10px;
+  box-shadow: none;
 }
