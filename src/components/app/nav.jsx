@@ -1,6 +1,6 @@
 import _ from 'underscore';
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 import * as BS from 'react-bootstrap';
 import {HomeIcon, StarIcon, GearIcon, QuestionIcon, GraphIcon, TagIcon} from 'react-octicons';
 
@@ -126,9 +126,8 @@ const AppNav = React.createClass({
       loginButton = (
         <BS.NavDropdown key='signin-dropdown' id='signin-dropdown' title={avatarImage}>
           <BS.MenuItem key='1' header>Signed in as <strong>{info.login}</strong></BS.MenuItem>
-          <BS.MenuItem key='2' onSelect={this.starThisProject}>Click to <StarIcon className='icon-spin' style={{color: '#fbca04'}}/> the <strong>gh-board</strong> repo if you like this project</BS.MenuItem>
-          <BS.MenuItem key='3' divider/>
-          <BS.MenuItem key='4' eventKey='1'><span onClick={this.onSignOut}>Sign Out</span></BS.MenuItem>
+          <BS.MenuItem key='2' divider/>
+          <BS.MenuItem key='3' eventKey='1'><span onClick={this.onSignOut}>Sign Out</span></BS.MenuItem>
         </BS.NavDropdown>
       );
     } else {
