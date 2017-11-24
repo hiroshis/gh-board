@@ -69,7 +69,7 @@ export default React.createClass({
               type='text'
               defaultValue={serverURL}
               disabled={!!serverURL}
-              placeholder='Enter Etherpad server URL'
+              placeholder='Enter Etherpad server URL (e.g. http://server.etherpad.com:8080)'
               inputRef={r => this._serverURL = r}
             />
           </p>

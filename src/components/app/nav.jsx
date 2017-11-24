@@ -36,7 +36,7 @@ const SettingsItem = React.createClass({
 
 const AppNav = React.createClass({
   getInitialState() {
-    return {info: null, showModal: false};
+    return {info: null, showModal: false, showEPModal: false};
   },
   componentDidMount() {
     SettingsStore.on('change', this.update);
